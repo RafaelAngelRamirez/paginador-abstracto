@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-6">
+    <app-paginador-abstracto
+      [debug]="true"
+      (actualizacion)="cambiarPagina($event)"
+      (esteComponente)="paginador = $event"
+    >
+    </app-paginador-abstracto>
+  </div>
+  <div class="col-6 animated fadeIn slow">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">numero</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">edad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dato of datos">
+          <td>{{ dato.numero }}</td>
+          <td>{{ dato.nombre }}</td>
+          <td>{{ dato.edad }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
